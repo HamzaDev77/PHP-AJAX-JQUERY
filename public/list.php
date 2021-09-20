@@ -1,4 +1,3 @@
-
 <?php
 require ('../template/template.php')
 ?>
@@ -13,15 +12,15 @@ require ('../template/template.php')
     </tr>
     <?php
     if(isset($_POST['id_service'])){
-        $id_s = $_POST['id_service'];
+        $id_s = $_POST['id_service']; /*----------------id service is used in Ajax scripts ---------------------------*/
         $_SESSION['count']=0;
         require "../database/connection.php";
         $reqte="SELECT * 
                     FROM services,profil
-                    WHERE services.id_s= '$id_s'
-                    AND profil.id_s='$id_s'
-                    ORDER BY profil.id_s
-                    DESC";
+                        WHERE services.id_s= '$id_s'
+                            AND profil.id_s='$id_s'
+                                ORDER BY profil.id_s
+                                    DESC";
         $exe=$base->query($reqte);
         while($ligne=$exe->fetch(PDO::FETCH_OBJ))
         {
@@ -53,7 +52,5 @@ require ('../template/template.php')
     }
     ?>
 </table>
-<script>
-
-</script>
-<pre id="">Nomre d'employés <?= $_SESSION['count']?></pre>
+                                    <!--Render the number of emplyee per service-->
+                                    <pre>Nomre d'employés <?= $_SESSION['count']?></pre>
