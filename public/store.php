@@ -14,10 +14,11 @@ if (isset($_POST['insert']))
     $pass = $login.$var1.substr($login,3,7);
     $pass_sha = sha1($pass);
     $_SESSION["pass"]= $pass;
-    //------------------------------------verification des mos de pass s'ils sont saisis----------//
-    //---------------------------------sinon si
+    //------------------------------------verification of inputs----------//
+    //--------------------------------------------------------------------**//
     $reqte_up = "INSERT INTO `profil` 
                             VALUES('','$nom','$prenom' ,'$email' ,'$pro' ,'$login','$pass_sha','$ser')";
+    /*-----------------------------------------Add number of employee per service----------------------------*/
     $reqte_up_1 = "UPDATE `services` 
                             SET `number_emp`= 
                                 (SELECT COUNT(id_s) 
@@ -27,7 +28,6 @@ if (isset($_POST['insert']))
     $exe_1 =$base->query($reqte_up_1);
     if ($exe && $exe_1)
     {
-
         require("msgs.php");
         $_SESSION["_inserted"];
         ?>
@@ -35,6 +35,5 @@ if (isset($_POST['insert']))
         <?php
     }
     header('location:show.php');
-
 }
 ?>

@@ -29,8 +29,9 @@
     </style>
 
 </head>
-
        <small id="small">
+           <!------------------------------------------------------------------------------>
+           <!--to render the message with JQuery-->
        </small>
             <form  method="post" action="public/store.php" class="container col-lg-8">
                     <label  class="col-lg-12"> login :</label>
@@ -51,7 +52,9 @@
                     <label class="col-lg-12"> service :</label>
                    <select id="id_s" name="service"  class="form-control col-lg-4 ">
                       <option disabled="true" selected="selected">--Service--</option>
-                      <?php
+                       <!------------------------------------------------------------------------------>
+                                            <!-- to import all services from DB -->
+                       <?php
                       require_once "database/connection.php";
                                 $rel="SELECT * FROM services";
                                 $exe=$base->query($rel);
