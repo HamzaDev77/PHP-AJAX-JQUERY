@@ -1,0 +1,30 @@
+a{
+    text-decoration:none;
+    color:#777;
+}
+a:hover{
+    text-decoration:none;
+    color:#999;
+}
+form{
+    font-family : consolas;
+}
+.form-control{
+    font-family : consolas;
+}
+.form-control:focus{
+    font-family : consolas;
+    background : #444;
+    color : white;
+    border:none;
+}
+td{
+    font-size : 13;
+    font-family : consolas;
+} th{
+    font-size : 15;
+    font-family : lucida console;
+}
+pre{
+    background: none;
+}
